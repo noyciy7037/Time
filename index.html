@@ -1,0 +1,57 @@
+<html>
+    <head>
+    <title>カスタムカウンター</title>
+    <script src="js/color.js" charset="utf-8"></script>
+</head>
+<body>
+    <h1>カスタムカウンター</h1>
+    <form action="time/index.html" method="get">
+        タイトル:<br>
+        <input required type="text" name="title"><br>
+        目標時間:
+        <input type="date" name="date">
+        <input type="time" name="time" value="00:00"><br>
+        フォント:
+        <br>
+        <div>
+            タイトル:
+            <select name="f0">
+                <option value="0">システム標準</option>
+                <option value="1">7セグ風</option>
+                <option value="2">14セグ風</option>
+                <option value="3">8x12ビットマップ</option>
+                <option value="4">8x8ビットマップ</option>
+            </select>
+            タイマー:
+            <select name="f1">
+                <option value="0">システム標準</option>
+                <option value="1">7セグ風</option>
+                <option value="2">14セグ風</option>
+                <option value="3">8x12ビットマップ</option>
+                <option value="4">8x8ビットマップ</option>
+            </select>
+            Progress:
+            <select name="f2">
+                <option value="0">システム標準</option>
+                <option value="1">7セグ風</option>
+                <option value="2">14セグ風</option>
+                <option value="3">8x12ビットマップ</option>
+                <option value="4">8x8ビットマップ</option>
+            </select>
+        </div>
+        色:<br>
+        タイトル:
+        <input name="c0" size="10" type="text" value="#000000" id="c0">
+        <input type="button" value="選択" onclick="cmanCP_JS_open(this)" cmanCPat="def_color:val=c0,def_alpha:0,rc_text:c0,rc_form:#16"><br>
+        タイマー:
+        <input name="c1" size="10" type="text" value="#000000" id="c1">
+        <input type="button" value="選択" onclick="cmanCP_JS_open(this)" cmanCPat="def_color:val=c1,def_alpha:0,rc_text:c1,rc_form:#16"><br>
+        Progress:
+        <input name="c2" size="10" type="text" value="#000000" id="c2">
+        <input type="button" value="選択" onclick="cmanCP_JS_open(this)" cmanCPat="def_color:val=c2,def_alpha:0,rc_text:c2,rc_form:#16"><br>
+        背景:
+        <input name="c3" size="10" type="text" value="#ffffff" id="c3">
+        <input type="button" value="選択" onclick="cmanCP_JS_open(this)" cmanCPat="def_color:val=c3,def_alpha:0,rc_text:c3,rc_form:#16"><br>
+        <input type="submit" value="作成">
+    </form>
+</body></html>
