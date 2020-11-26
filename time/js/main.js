@@ -1,9 +1,15 @@
+var requestAnimationFrame = window.requestAnimationFrame || 
+　　　　　　　　　　　　　　　　window.mozRequestAnimationFrame ||
+                         　window.webkitRequestAnimationFrame || 
+　　　　　　　　　　　　　　　　window.msRequestAnimationFrame;
+window.requestAnimationFrame = requestAnimationFrame;
+
 var timer = document.getElementsByClassName("time")[0];
 
 var fonts = ["", "DSEG7Classic-Bold", "DSEG14Classic-Bold", "k8x12", "misaki"];
 var stylesheets = document.styleSheets.item(0);
 
-var targetDate = new Date(getParam('date') + " " + getParam('time'));
+var targetDate = new Date(getParam('date') + "T" + getParam('time') + ":00+09:00");
 
 console.log(targetDate);
 
@@ -19,7 +25,10 @@ stylesheets.cssRules[7].style.fontFamily = fonts[getParam('f2')];
 
 document.body.style.backgroundColor = getParam('c3');
 
-setInterval(function () {
+window.requestAnimationFrame(loop);
+
+function loop(){
+    window.requestAnimationFrame(loop);
     var date = new Date();
     if (targetDate - date < 0) {
         timer.innerHTML = datedifY(targetDate, date) + "-" +
@@ -39,7 +48,7 @@ setInterval(function () {
             zeroPadding(getSec(date, targetDate), 2) + "\." +
             zeroPadding(getMs(date, targetDate), 3);
     }
-}, 11);
+}
 
 function zeroPadding(NUM, LEN) {
     return (Array(LEN).join('0') + NUM).slice(-LEN);
