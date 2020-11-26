@@ -25,15 +25,12 @@ html {
 }
 
 .title {
-    font-family: 'k8x12';
-    font-size: 10vw;
+    font-size: 10vmin;
 }
 
 .time {
-    font-family: 'DSEG7Classic-Bold';
-    font-size: 10vw;
+    font-size: 10vmin;
 }
 
 .progress {
-    font-family: 'DSEG14Classic-Bold';
 }
